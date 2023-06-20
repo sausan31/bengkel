@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Sistem Informasi Bengkel</title>
+
+	<link href="foto/logo.png" rel="icon" type="images/x-icon">
+
+	<!-- Bootstrap Core CSS -->
+	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- MetisMenu CSS -->
+	<link href="libs/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+	<!-- DataTables CSS -->
+	<link href="libs/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+	<!-- DataTables Responsive CSS -->
+	<link href="libs/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="dist/css/sb-admin-2.css" rel="stylesheet">
+	<link href="dist/css/offline-font.css" rel="stylesheet">
+	<link href="dist/css/custom.css" rel="stylesheet">
+
+	<!-- Custom Fonts -->
+	<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- jQuery -->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand hidden-xs" href="index.html">
+					<img src="foto/logo.png" alt="brand" width="32" class="float-left image-brand">
+					<div class="float-right">&nbsp;<strong>Bengkel</strong></div>
+					<div class="clear-both"></div>
+				</a>
+				<a class="navbar-brand visible-xs" href="index.html">
+					<img src="foto/logo.png" alt="brand" width="32" class="float-left image-brand">
+					<div class="float-right">&nbsp;<strong>Bengkel</strong></div>
+					<div class="clear-both"></div>
+				</a>
+			</div><!-- /.navbar-header -->
+
+			<ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown dropdown-right">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<img id="sess_admfoto" src="" width="20px" height="20px" padding="0px">&nbsp;&nbsp;&nbsp; <span
+							id="sess_admname"></span> <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li><a href="pengaturan.html"><i class="fa fa-gear fa-fw"></i>&nbsp;Pengaturan Akun</a></li>
+						<li class="divider"></li>
+						<li><a href="backend/logout.php"><i class="fa fa-sign-out fa-fw"></i> Keluar</a></li>
+					</ul><!-- /.dropdown-user -->
+				</li><!-- /.dropdown -->
+			</ul><!-- /.navbar-top-links -->
+
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<h4>Sistem Informasi Bengkel</h4>
+							<h5 class="text-muted"><i class="fa fa-calendar fa-fw"></i><span id="tanggal"></span>
+							</h5>
+						</li>
+						<li><a href="index.html" class="active"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a></li>
+						<li><a href="#"><i class="fa fa-chain fa-fw"></i>&nbsp;Data Supplier<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="supplier.html">Data Supplier</a></li>
+							</ul><!-- /.nav-second-level -->
+						</li>
+						<li><a href="#"><i class="fa fa-group fa-fw"></i>&nbsp;Data Kasir<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="kasir.html">Data Kasir</a></li>
+							</ul><!-- /.nav-second-level -->
+						</li>
+						<li><a href="#"><i class="fa fa-th-large fa-fw"></i>&nbsp;Data Barang dan Jasa<span
+									class="fa arrow"></span></a>
+
+							<ul class="nav nav-second-level">
+								<li><a href="trxbarang.html">Barang Masuk</a></li>
+								<li><a href="barang.html">Data Barang</a></li>
+								<li><a href="jasa.html">Data Jasa</a></li>
+
+							</ul><!-- /.nav-second-level -->
+						</li>
+						<li><a href="#"><i class="fa fa-gear fa-fw"></i>&nbsp;Transaksi<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="trx.html">Data Transaksi</a></li>
+							</ul><!-- /.nav-second-level -->
+						</li>
+						<li><a href="#"><i class="fa fa-folder fa-fw"></i>&nbsp;Laporan<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="laporan_trx.html">Laporan Transaksi</a></li>
+								<li><a href="laporan_brg.html">Laporan Barang</a></li>
+							</ul><!-- /.nav-second-level -->
+						</li>
+					</ul>
+				</div>
+				<!-- /.sidebar-collapse -->
+			</div>
+			<!-- /.navbar-static-side -->
+		</nav>
+	</div>
+	<!-- top of file -->
+	<!-- Page Content -->
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Beranda</h1>
+				</div><!-- /.col-lg-12 -->
+			</div><!-- /.row -->
+
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-check-circle fa-3x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge" id="jmltrx"></div>
+									<div>
+										<h4>Transaksi Minggu Ini</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a href="trx.html">
+							<div class="panel-footer">
+								<span class="pull-left">Lihat Rincian</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div><!-- /.panel-green -->
+
+				<div class="col-lg-6 col-md-6">
+					<div class="panel panel-yellow">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-plus-circle fa-3x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge" id="ttl"></div>
+									<div>
+										<h4>Pendapatan Minggu Ini</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<a href="trx.html">
+							<div class="panel-footer">
+								<span class="pull-left">Lihat Rincian</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div><!-- /.panel-green -->
+			</div><!-- /.row -->
+		</div><!-- /.container-fluid -->
+	</div><!-- /#page-wrapper -->
+	<!-- bottom of file -->
+	</div><!-- /#wrapper -->
+
+	<!-- footer-bottom -->
+	<div class="navbar navbar-inverse navbar-fixed-bottom footer-bottom">
+		<div class="container text-center">
+			<p class="text-center" style="color: #D1C4E9; margin: 0 0 5px; padding: 0"><small>Bengkel</small></p>
+		</div>
+	</div><!-- /.footer-bottom -->
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="libs/metisMenu/dist/metisMenu.min.js"></script>
+	<!-- DataTables JavaScript -->
+	<script src="libs/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="libs/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+	<!-- jTebilang JavaScript -->
+	<script src="libs/jTerbilang/jTerbilang.js"></script>
+	<!-- Custom Theme JavaScript -->
+	<script src="dist/js/sb-admin-2.js"></script>
+
+	<script>
+		$.ajax({
+			url: "./backend/dashboard-backend.php",
+			type: "POST",
+			data: {},
+			success: function (data) {
+				console.log(JSON.parse(data));
+				let result = JSON.parse(data);
+				if (data == "0") {
+					location.href = "login.html";
+				} else {
+					$("#jmltrx").text(result.jmltrx);
+					$("#ttl").text(result.ttl);
+					$("#sess_admfoto").attr("src", "foto/" + result.sess_admfoto)
+					$("#sess_admname").text(result.sess_admname);
+					$("#tanggal").text(` ${result.hari_ini}, ${result.tanggal} ${result.bulan_ini} ${result.tahun}`)
+				}
+			},
+			error: function (request, status, error) {
+				//swal("error", "Gagal Load", "error");
+			}
+		});
+	</script>
+
+</body>
+
+</html>

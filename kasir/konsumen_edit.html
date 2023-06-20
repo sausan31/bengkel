@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Kasir - Sistem Informasi Bengkel</title>
+
+	<link href="foto/logo.png" rel="icon" type="images/x-icon">
+
+	<!-- Bootstrap Core CSS -->
+	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- MetisMenu CSS -->
+	<link href="libs/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+	<!-- DataTables CSS -->
+	<link href="libs/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+	<!-- DataTables Responsive CSS -->
+	<link href="libs/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="dist/css/sb-admin-2.css" rel="stylesheet">
+	<link href="dist/css/offline-font.css" rel="stylesheet">
+	<link href="dist/css/custom.css" rel="stylesheet">
+
+	<!-- Custom Fonts -->
+	<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- jQuery -->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand hidden-xs" href="index.html">
+					<img src="foto/logo.png" alt="brand" width="32" class="float-left image-brand">
+					<div class="float-right">&nbsp;<strong>Bengkel</strong></div>
+					<div class="clear-both"></div>
+				</a>
+				<a class="navbar-brand visible-xs" href="index.html">
+					<img src="foto/logo.png" alt="brand" width="32" class="float-left image-brand">
+					<div class="float-right">&nbsp;<strong>Bengkel</strong></div>
+					<div class="clear-both"></div>
+				</a>
+			</div><!-- /.navbar-header -->
+
+			<ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown dropdown-right">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<img id="sess_kasirfoto" src="" width="20px" height="20px" padding="0px">&nbsp;&nbsp;&nbsp;
+						<span id="sess_kasirname"></span> <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li><a href="pengaturan.html"><i class="fa fa-gear fa-fw"></i>&nbsp;Pengaturan Akun</a></li>
+						<li class="divider"></li>
+						<li><a href="backend/logout.php"><i class="fa fa-sign-out fa-fw"></i> Keluar</a></li>
+					</ul><!-- /.dropdown-user -->
+				</li><!-- /.dropdown -->
+			</ul><!-- /.navbar-top-links -->
+
+
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<h4>Sistem Informasi Bengkel</h4>
+							<h5 class="text-muted"><i class="fa fa-calendar fa-fw"></i><span id="tanggal"></span>
+						</li>
+						<li><a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a></li>
+
+						<li>
+							<a href="#"><i class="fa fa-gear fa-fw"></i>&nbsp;Transaksi<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="trx_baru.html">Transaksi Baru</a></li>
+								<li><a href="trx.html">Data Transaksi</a></li>
+							</ul><!-- /.nav-second-level -->
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-group fa-fw"></i>&nbsp;Data Konsumen<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="konsumen.html">Data Konsumen</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-folder fa-fw"></i>&nbsp;Laporan<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="laporan.html">Laporan</a></li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+				<!-- /.sidebar-collapse -->
+			</div>
+
+			<!-- /.navbar-static-side -->
+		</nav>
+	</div>
+	<!-- top of file -->
+	<!-- Page Content -->
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Data Konsumen</h1>
+				</div><!-- /.col-lg-12 -->
+			</div><!-- /.row -->
+
+			<div class="row">
+				<div class="col-lg-12">
+					<form class="form-horizontal" action="backend/konsumen_update.php" method="POST"
+						enctype="multipart/form-data">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h3>Edit Data</h3>
+							</div>
+							<div class="panel-body">
+								<div class="form-group">
+									<label class="control-label col-sm-3">Nama</label>
+									<div class="col-sm-4">
+										<input type="text" name="nama" class="form-control" placeholder="Nama" value=""
+											required>
+										<input type="hidden" name="kon" class="form-control" placeholder="ID" value=""
+											required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Telepon</label>
+									<div class="col-sm-4">
+										<input type="number" name="telp" min="0" class="form-control"
+											placeholder="Telepon" value="" required>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label col-sm-3">Alamat</label>
+									<div class="col-sm-4">
+										<textarea name="alamat" class="form-control" placeholder="Alamat" rows="3"
+											required></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="panel-footer">
+								<button type="submit" name="perbarui" class="btn btn-success">Update</button>
+							</div>
+						</div><!-- /.panel -->
+					</form>
+				</div><!-- /.col-lg-12 -->
+			</div><!-- /.row -->
+		</div><!-- /.container-fluid -->
+	</div><!-- /#page-wrapper -->
+	<!-- bottom of file -->
+	<!-- footer-bottom -->
+	<div class="navbar navbar-inverse navbar-fixed-bottom footer-bottom">
+		<div class="container text-center">
+			<p class="text-center" style="color: #D1C4E9; margin: 0 0 5px; padding: 0"><small>Bengkel</small></p>
+		</div>
+	</div><!-- /.footer-bottom -->
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="libs/metisMenu/dist/metisMenu.min.js"></script>
+	<!-- DataTables JavaScript -->
+	<script src="libs/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="libs/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+	<!-- jTebilang JavaScript -->
+	<script src="libs/jTerbilang/jTerbilang.js"></script>
+	<!-- Custom Theme JavaScript -->
+	<script src="dist/js/sb-admin-2.js"></script>
+
+	<script>
+		let currentURL = new URL(window.location.href);
+		let konValue = currentURL.searchParams.get('kon');
+		$.ajax({
+			url: "./backend/konsumen_edit.php?kon=" + konValue,
+			type: "POST",
+			data: {},
+			success: function (data) {
+				let result = JSON.parse(data);
+				if (data == "0") {
+					location.href = "../login.html";
+				} else {
+					var i = 1;
+					var res = result.data;
+
+					$("#sess_kasirfoto").attr("src", "../foto/" + result.sess_kasirfoto)
+					$("#sess_kasirname").text(result.sess_kasirname);
+					$("#tanggal").text(
+						` ${result.hari_ini}, ${result.tanggal} ${result.bulan_ini} ${result.tahun}`)
+
+					$("input[name=nama]").val(result.data.nama_kon);
+					$("input[name=kon]").val(result.data.id_kon);
+					$("input[name=telp]").val(result.data.telp_kon);
+					$("textarea[name=alamat]").val(result.data.alamat_kon);
+				}
+			},
+			error: function (request, status, error) {
+				//swal("error", "Gagal Load", "error");
+			}
+		});
+	</script>
+
+</body>
+
+</html>

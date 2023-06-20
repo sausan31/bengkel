@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Sistem Informasi Bengkel</title>
+
+	<link href="foto/logo.png" rel="icon" type="images/x-icon">
+
+	<!-- Bootstrap Core CSS -->
+	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- MetisMenu CSS -->
+	<link href="libs/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+	<!-- DataTables CSS -->
+	<link href="libs/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+	<!-- DataTables Responsive CSS -->
+	<link href="libs/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="dist/css/sb-admin-2.css" rel="stylesheet">
+	<link href="dist/css/offline-font.css" rel="stylesheet">
+	<link href="dist/css/custom.css" rel="stylesheet">
+
+	<!-- Custom Fonts -->
+	<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- jQuery -->
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand hidden-xs" href="index.html">
+					<img src="foto/logo.png" alt="brand" width="32" class="float-left image-brand">
+					<div class="float-right">&nbsp;<strong>Bengkel</strong></div>
+					<div class="clear-both"></div>
+				</a>
+				<a class="navbar-brand visible-xs" href="index.html">
+					<img src="foto/logo.png" alt="brand" width="32" class="float-left image-brand">
+					<div class="float-right">&nbsp;<strong>Bengkel</strong></div>
+					<div class="clear-both"></div>
+				</a>
+			</div><!-- /.navbar-header -->
+
+			<ul class="nav navbar-top-links navbar-right">
+				<li class="dropdown dropdown-right">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<img id="sess_admfoto" src="" width="20px" height="20px" padding="0px">&nbsp;&nbsp;&nbsp; <span
+							id="sess_admname"></span> <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li><a href="pengaturan.html"><i class="fa fa-gear fa-fw"></i>&nbsp;Pengaturan Akun</a></li>
+						<li class="divider"></li>
+						<li><a href="backend/logout.php"><i class="fa fa-sign-out fa-fw"></i> Keluar</a></li>
+					</ul><!-- /.dropdown-user -->
+				</li><!-- /.dropdown -->
+			</ul><!-- /.navbar-top-links -->
+
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<h4>Sistem Informasi Bengkel</h4>
+							<h5 class="text-muted"><i class="fa fa-calendar fa-fw"></i><span id="tanggal"></span>
+							</h5>
+						</li>
+						<li><a href="index.html"><i class="fa fa-home fa-fw"></i>&nbsp;Beranda</a></li>
+						<!-- open <li> tag generated with php, see line 155-160 -->
+						<li><a href="#"><i class="fa fa-chain fa-fw"></i>&nbsp;Data Supplier<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="supplier.html">Data Supplier</a></li>
+							</ul><!-- /.nav-second-level -->
+						</li>
+						<!-- open <li> tag generated with php, see line 155-160 -->
+						<li><a href="#"><i class="fa fa-group fa-fw"></i>&nbsp;Data Kasir<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="kasir.html">Data Kasir</a></li>
+							</ul><!-- /.nav-second-level -->
+						</li>
+						<!-- open <li> tag generated with php, see line 155-160 -->
+						<li><a href="#"><i class="fa fa-th-large fa-fw"></i>&nbsp;Data Barang dan Jasa<span
+									class="fa arrow"></span></a>
+
+							<ul class="nav nav-second-level">
+								<li><a href="trxbarang.html">Barang Masuk</a></li>
+								<li><a href="barang.html">Data Barang</a></li>
+								<li><a href="jasa.html">Data Jasa</a></li>
+
+							</ul><!-- /.nav-second-level -->
+						</li>
+						<!-- open <li> tag generated with php, see line 134-139 -->
+						<li><a href="#"><i class="fa fa-gear fa-fw"></i>&nbsp;Transaksi<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="trx.html">Data Transaksi</a></li>
+							</ul><!-- /.nav-second-level -->
+						</li>
+						<!-- open <li> tag generated with php, see line 155-160 -->
+						<li><a href="#"><i class="fa fa-folder fa-fw"></i>&nbsp;Laporan<span
+									class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li><a href="laporan_trx.html">Laporan Transaksi</a></li>
+								<li><a href="laporan_brg.html">Laporan Barang</a></li>
+							</ul><!-- /.nav-second-level -->
+						</li>
+					</ul>
+				</div>
+				<!-- /.sidebar-collapse -->
+			</div>
+			<!-- /.navbar-static-side -->
+		</nav>
+	</div>
+	<!-- top of file -->
+	<!-- Page Content -->
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1 class="page-header">Data Supplier</h1>
+				</div><!-- /.col-lg-12 -->
+			</div><!-- /.row -->
+
+			<!-- <div class="row">
+			<div class="col-lg-12"><?php include("layout_alert.html"); ?></div>
+		</div> -->
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a href="supplier_tambah.html" class="btn btn-success">Tambah</a>
+						</div>
+						<div class="panel-body">
+							<table class="table table-striped table-bordered table-hover" id="tabel-data">
+								<thead>
+									<tr>
+										<th width="1%">No</th>
+										<th width="10%">Nama</th>
+										<th width="5%">Telepon</th>
+										<th width="10%">Alamat</th>
+										<th width="5%">Opsi</th>
+									</tr>
+								</thead>
+								<tbody id="data-body">
+
+								</tbody>
+							</table>
+						</div>
+						<!-- Large modal -->
+						<div class="modal fade bs-example-modal" id="myModal" tabindex="-1" role="dialog"
+							aria-hidden="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-body">
+										<p>One fine body…</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div><!-- /.panel -->
+				</div><!-- /.col-lg-12 -->
+			</div><!-- /.row -->
+		</div><!-- /.container-fluid -->
+	</div><!-- /#page-wrapper -->
+	<!-- bottom of file -->
+	<script type="text/javascript">
+		function init_table() {
+			$(document).ready(function () {
+				$('#tabel-data').DataTable({
+					"responsive": true,
+					"processing": true,
+					"columnDefs": [{
+						"orderable": false,
+						"targets": [4]
+					}]
+				});
+
+				$('#tabel-data').parent().addClass("table-responsive");
+			});
+		}
+	</script>
+	<script>
+		var app = {
+			code: '0'
+		};
+
+		$('[data-load-code]').on('click', function (e) {
+			e.preventDefault();
+			var $this = $(this);
+			var code = $this.data('load-code');
+			if (code) {
+				$($this.data('remote-target')).load('karyawan_detail.html?code=' + code);
+				app.code = code;
+
+			}
+		});
+	</script>
+
+	<!-- footer-bottom -->
+	<div class="navbar navbar-inverse navbar-fixed-bottom footer-bottom">
+		<div class="container text-center">
+			<p class="text-center" style="color: #D1C4E9; margin: 0 0 5px; padding: 0"><small>Bengkel | Repost by <a
+						href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a>
+			</p>
+		</div>
+	</div><!-- /.footer-bottom -->
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<!-- Metis Menu Plugin JavaScript -->
+	<script src="libs/metisMenu/dist/metisMenu.min.js"></script>
+	<!-- DataTables JavaScript -->
+	<script src="libs/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="libs/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+	<!-- jTebilang JavaScript -->
+	<script src="libs/jTerbilang/jTerbilang.js"></script>
+	<!-- Custom Theme JavaScript -->
+	<script src="dist/js/sb-admin-2.js"></script>
+
+	<script>
+		$.ajax({
+			url: "./backend/supplier_backend.php",
+			type: "POST",
+			data: {},
+			success: function (data) {
+				console.log(JSON.parse(data));
+				let result = JSON.parse(data);
+				if (data == "0") {
+					location.href = "login.html";
+				} else {
+					var i = 1;
+					var res = result.data;
+					console.log(res);
+					res.forEach(function (dataItem) {
+						let html = `
+							<tr>
+							<td class="text-center">${i}</td>
+							<td class="text-center">${dataItem.nama_spl}</td>
+							<td class="text-center">${dataItem.telp_spl}</td>
+							<td class="text-center">${dataItem.alamat_spl}</td>
+							<td class="text-center">
+								<a href="supplier_edit.html?spl=${dataItem.id_spl}" class="btn btn-warning btn-xs">Edit</a>
+								<a href="backend/supplier_hapus.php?spl=${dataItem.id_spl}" onclick="return confirm('Apakah anda yakin akan menghapus ${dataItem.nama_spl}?');" class="btn btn-danger btn-xs">Hapus</a>
+							</td>
+							</tr>
+						`;
+						i++;
+						$("#data-body").append(html);
+					});
+
+					init_table()
+
+					$("#sess_admfoto").attr("src", "foto/" + result.sess_admfoto)
+					$("#sess_admname").text(result.sess_admname);
+					$("#tanggal").text(
+						` ${result.hari_ini}, ${result.tanggal} ${result.bulan_ini} ${result.tahun}`)
+				}
+			},
+			error: function (request, status, error) {
+				//swal("error", "Gagal Load", "error");
+			}
+		});
+	</script>
+
+</body>
+
+</html>
